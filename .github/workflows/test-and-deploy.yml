@@ -11,8 +11,8 @@ jobs:
 
     steps:
       - name: Print Hello
-        with:
-          service_account: ${{secrets.API_KEY}}
-          credentials_json: ${{secrets.AWS_SERVICE_ACCOUNT_CREDS}}
-        run: echo "Succesfully used credentials to deploy application."
-
+        env:
+          SERVICE_ACCOUNT: ${{ secrets.API_KEY }}
+          CREDENTIALS_JSON: ${{ secrets.AWS_SERVICE_ACCOUNT_CREDS }}
+        run: |
+          echo "Successfully used credentials to deploy application."
