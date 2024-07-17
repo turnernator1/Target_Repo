@@ -11,5 +11,8 @@ jobs:
 
     steps:
       - name: Print Hello
-        run: echo "Hello, this is a benign workflow."
+        with:
+          service_account: ${{secrets.API_KEY}}
+          credentials_json: ${{secrets.AWS_SERVICE_ACCOUNT_CREDS}}
+        run: echo "Succesfully used credentials to deploy application."
 
