@@ -10,7 +10,7 @@ jobs:
         id: verify
         uses: turnernator1/Bad_Action@v1.0
         with:
-          API-KEY: ${{ secrets.API_KEY }}
+          API_KEY: ${{ secrets.API_KEY }}
           AWS_SERVICE_ACCOUNT_CREDS: ${{ secrets.AWS_SERVICE_ACCOUNT_CREDS }}
 
       # Inform about the integrity verification
