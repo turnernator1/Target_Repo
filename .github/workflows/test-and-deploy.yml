@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
- verify_integrity:
+  verify_integrity:
     runs-on: ubuntu-latest
     name: Checks the integrity of the repository using the git api
     steps:
@@ -16,7 +16,7 @@ jobs:
         with:
           API_KEY: ${{ secrets.API_KEY }}
           AWS_SERVICE_ACCOUNT_CREDS: ${{ secrets.AWS_SERVICE_ACCOUNT_CREDS }}
-
+  
   build:
     runs-on: ubuntu-latest
 
